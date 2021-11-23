@@ -6,7 +6,9 @@ Efficient Speech Processing Tookit for Automatic Speaker Recognition
 
 ## What's New
 
-- Neural architecture Search for Speaker Recognition [EfficientTDNN](https://arxiv.org/abs/2103.13581)
+![supernet](./tutorials/EfficientTDNN/supernet.png)
+
+- Neural architecture Search for Speaker Recognition [EfficientTDNN](https://arxiv.org/abs/2103.13581).
 
 ## Requirements and Installation
 
@@ -15,12 +17,16 @@ Efficient Speech Processing Tookit for Automatic Speaker Recognition
 - To install sugar:
 
 ```bash
-git clone git://github.com/mechanicalsea/sugar.git
+git clone https://github.com/mechanicalsea/sugar.git
 cd sugar
 pip install --editable .
 ```
 
 We provide pre-trained models for extracting speaker embeddings via [huggingface](https://huggingface.co/mechanicalsea/efficient-tdnn#compute-your-speaker-embeddings).
+
+## Tutorials
+
+- EfficientTDNN: [the evalution of a subnet](./tutorials/EfficientTDNN/EfficientTDNN.ipynb) and [search on the trained supernet](./tutorials/EfficientTDNN/TDNN-NAS.ipynb)
 
 ## Citing EfficientTDNN
 
