@@ -5,6 +5,11 @@ architectures/
 sugar/version.py
 examples/
 configs/
+**/veri_test2.txt
+**/list_test_all2.txt
+**/list_test_hard2.txt
+**/vox2_trainlst.txt
+**/vox2.6000.txt
 
 # model checkpoint
 *.torchparams
