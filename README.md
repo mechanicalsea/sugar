@@ -8,7 +8,7 @@ Efficient Speech Processing Tookit for Automatic Speaker Recognition
 
 ![supernet](./tutorials/EfficientTDNN/supernet.png)
 
-- Neural architecture Search for Speaker Recognition [EfficientTDNN](https://arxiv.org/abs/2103.13581).
+- [EfficientTDNN: Efficient Architecture Search for Speaker Recognition](https://arxiv.org/abs/2103.13581)
 
 ## Requirements and Installation
 
