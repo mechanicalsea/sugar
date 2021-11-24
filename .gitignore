@@ -1,5 +1,10 @@
+# Downloaded package
+architectures/
+
 # Generated files
 sugar/version.py
+examples/
+configs/
 
 # model checkpoint
 *.torchparams
