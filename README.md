@@ -33,9 +33,10 @@ We provide pre-trained models for extracting speaker embeddings via [huggingface
 Please, cite EfficientTDNN if you use it for your research or business.
 
 ```bibtex
-@article{speechbrain,
-  title={{EfficientTDNN}: Efficient Architecture Search for Speaker Recognition in the Wild},
-  author={Rui Wang and Zhihua Wei and Haoran Duan and Shouling Ji and Zhen Hong},
+@article{rwang-efficienttdnn-2021,
+  title={{EfficientTDNN}: Efficient Architecture Search for Speaker Recognition},
+  author={Rui Wang and Zhihua Wei and Haoran Duan and Shouling Ji and Yang Long and Zhen Hong},
+  journal={arXiv preprint arXiv:2103.13581},
   year={2021},
   eprint={2103.13581},
   archivePrefix={arXiv},
