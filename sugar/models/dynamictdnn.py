@@ -811,19 +811,18 @@ class DynamicTDNN(DynamicModule):
             space_depth = [self.num_blocks + d for d in depths]
         else: 
             space_depth = [self.num_blocks]
-
         if 'width' in mode or 'width1' in mode or 'width2' in mode:
-            if 'width1' in mode:
-                rates = channel_ratios[len(channel_ratios)//2:]
-                space_channels = [[_make_divisible(rate * channel) for rate in rates] for channel in self.channels]
-                space_catconv = [_make_divisible(rate * self.catconv_channels) for rate in rates]
-            if 'width2' in mode or 'width' in mode:
-                rates = channel_ratios
-                space_channels = [[_make_divisible(rate * channel) for rate in rates] for channel in self.channels]
-                space_catconv = [_make_divisible(rate * self.catconv_channels) for rate in rates]
+            rates = channel_ratios
+            # if 'width1' in mode:
+            #     rates = channel_ratios[len(channel_ratios)//2:]
+            # if 'width2' in mode or 'width' in mode:
+            #     rates = channel_ratios
+            space_channels = [[_make_divisible(rate * channel) for rate in rates] for channel in self.channels]
+            space_catconv = [_make_divisible(rate * self.catconv_channels) for rate in rates]
         else:
             space_channels = [[channel] for channel in self.channels]
             space_catconv = [self.catconv_channels]
+        
 
         lowbound_depth = min(space_depth)
         lowbound_channels = [min(channels) for channels in space_channels]
@@ -835,8 +834,12 @@ class DynamicTDNN(DynamicModule):
         upbound_kernenls = [max(kernels) for kernels in space_kernels]
         upbound_catconv = max(space_catconv)
         
-        return [space_depth] + space_channels + space_kernels + [space_catconv]
+        print(f"searchable depth: {space_depth}")
+        print(f"searchable channels: {space_channels}")
+        print(f"searchable kernels: {space_kernels}")
+        print(f"searchable catconv: {space_catconv}")
 
+        return [space_depth] + space_channels + space_kernels + [space_catconv]
     
 
 class TDNNPath:
