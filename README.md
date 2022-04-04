@@ -34,7 +34,7 @@ We provide pre-trained models for extracting speaker embeddings via [huggingface
 
 - EfficientTDNN
   - [the evalution of a subnet](./tutorials/EfficientTDNN/EfficientTDNN.ipynb)
-  - [evaluation of different subnets from a given supernet](./tutorials/EfficientTDNN/SubnetEvaluation)
+  - [evaluation of different subnets from a given supernet](./tutorials/EfficientTDNN/SubnetEvaluation.ipynb)
   - [search on the trained supernet](./tutorials/EfficientTDNN/TDNN-NAS.ipynb)
 
 ## EfficientTDNN Training Scripts
