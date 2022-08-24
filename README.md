@@ -4,11 +4,15 @@ Efficient Speech Processing Tookit for Automatic Speaker Recognition
 
 | **[HuggingFace](https://huggingface.co/mechanicalsea/efficient-tdnn)** |
 
+The authors' PyTorch implementation and pretrained models of EfficientTDNN.
+
+- 17 June 2022: EfficientTDNN are published in IEEE/ACM Transactions on Audio, Speech, and Language Processing.
+
 ## What's New
 
 ![supernet](./tutorials/EfficientTDNN/supernet.png)
 
-- [EfficientTDNN: Efficient Architecture Search for Speaker Recognition](https://arxiv.org/abs/2103.13581)
+- EfficientTDNN: Efficient Architecture Search for Speaker Recognition [[arXiv]](https://arxiv.org/abs/2103.13581) [[IEEE/ACM TASLP]](https://ieeexplore.ieee.org/document/9798861)
 
 ## Models and Checkpoints
 
@@ -53,21 +57,37 @@ python scripts/train_vox2_veri.py --distributed --augment \
       --logdir ${logdir}
 ```
 
+## Load Pre-Trained Models for Inference
+
+```python
+import torch
+from sugar.models import WrappedModel
+wav_input_16khz = torch.randn(1,10000).cuda()
+
+repo_id = "mechanicalsea/efficient-tdnn"
+supernet_filename = "depth/depth.torchparams"
+subnet_filename = "depth/depth.ecapa-tdnn.3.512.512.512.512.5.3.3.3.1536.bn.tar"
+subnet, info = WrappedModel.from_pretrained(repo_id=repo_id, supernet_filename=supernet_filename, subnet_filename=subnet_filename)
+subnet = subnet.cuda()
+subnet = subnet.eval()
+
+embedding = subnet(wav_input_16khz)
+```
+
 ## Citing EfficientTDNN
 
 Please, cite EfficientTDNN if you use it for your research or business.
 
 ```bibtex
-@article{rwang-efficienttdnn-2021,
-  title={{EfficientTDNN}: Efficient Architecture Search for Speaker Recognition},
-  author={Rui Wang and Zhihua Wei and Haoran Duan and Shouling Ji and Yang Long and Zhen Hong},
-  journal={arXiv preprint arXiv:2103.13581},
-  year={2021},
-  eprint={2103.13581},
-  archivePrefix={arXiv},
-  primaryClass={eess.AS},
-  note={arXiv:2103.13581}
-}
+@article{wr-efficienttdnn-2022,
+  author={Wang, Rui and Wei, Zhihua and Duan, Haoran and Ji, Shouling and Long, Yang and Hong, Zhen},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+  title={EfficientTDNN: Efficient Architecture Search for Speaker Recognition}, 
+  year={2022},
+  volume={30},
+  number={},
+  pages={2267-2279},
+  doi={10.1109/TASLP.2022.3182856}}
 ```
 
 ## Contact Information
