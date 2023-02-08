@@ -30,6 +30,8 @@ The authors' PyTorch implementation and pretrained models of EfficientTDNN.
 git clone https://github.com/mechanicalsea/sugar.git
 cd sugar
 pip install --editable .
+
+# [Option] Requrements Packages: numpy, scipy, pandas, matplotlib, pyyaml, thop, geatpy, torch, torchvision, torchaudio, scikit-learn
 ```
 
 We provide pre-trained models for extracting speaker embeddings via [huggingface](https://huggingface.co/mechanicalsea/efficient-tdnn#compute-your-speaker-embeddings).
